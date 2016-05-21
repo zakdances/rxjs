@@ -35,7 +35,8 @@ import {Observable} from '../Observable';
  * @method map
  * @owner Observable
  */
-export function map<T, R>(project: (value: T, index: number) => R, thisArg?: any): Observable<R> {
+
+export const map = function<T, R>(project: (value: T, index: number) => R, thisArg?: any): Observable<R> {
   if (typeof project !== 'function') {
     throw new TypeError('argument is not a function. Are you looking for `mapTo()`?');
   }
